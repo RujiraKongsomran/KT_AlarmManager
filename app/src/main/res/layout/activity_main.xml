@@ -7,18 +7,30 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
-    <Button
+    <com.ornach.nobobutton.NoboButton
         android:id="@+id/btnTimer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_centerInParent="true"
-        android:text="Start Alarm" />
+        android:layout_marginBottom="20dp"
+        android:padding="10dp"
+        app:nb_backgroundColor="#ba68c8"
+        app:nb_borderColor="#FFFFFF"
+        app:nb_borderWidth="2dp"
+        app:nb_focusColor="#883997"
+        app:nb_fontIcon="&#xf017;"
+        app:nb_radius="8dp"
+        app:nb_text="Start Alarm"
+        app:nb_textColor="#FFF" />
 
     <TextView
+        android:gravity="center"
         android:id="@+id/tvTimer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnTimer"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:textColor="#ba68c8"
+        android:textSize="18sp" />
 
 </RelativeLayout>

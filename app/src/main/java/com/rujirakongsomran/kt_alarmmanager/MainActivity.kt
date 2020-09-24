@@ -5,14 +5,14 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.rujirakongsomran.kt_alarmmanager.databinding.ActivityMainBinding
+import de.mateware.snacky.Snacky
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
-import kotlin.text.StringBuilder
 
 class MainActivity : AppCompatActivity() {
 
@@ -62,7 +62,17 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.tvTimer.text = textTimer
-        Toast.makeText(this, "Alarm has been set", Toast.LENGTH_SHORT).show()
+
+        Snacky.builder()
+            .setView(binding.root)
+            .setText("Alarm has been set")
+            .centerText()
+            .setBackgroundColor(ContextCompat.getColor(this, R.color.colorBackgroundSnack))
+            .setDuration(Snacky.LENGTH_LONG)
+            .info()
+            .show();
+
+        //Toast.makeText(this, "Alarm has been set", Toast.LENGTH_SHORT).show()
 
     }
 }
